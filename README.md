@@ -1,0 +1,2 @@
+# amateur_radio_ope_class_4th
+4アマ講座用資料
