@@ -1,0 +1,64 @@
+%%%%%%%%%%　ＭＳＪフォーマットの定義　%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{txfonts}
+\usepackage[dvipdfmx]{graphicx,color}
+%\usepackage[dvips,dvipdfm]{graphicx,color}
+\usepackage[balance]{nidanfloat}
+\usepackage{tabularx}
+\usepackage{bm}
+
+
+%%マージン設定
+\setlength{\oddsidemargin}{-0.64truecm}
+\setlength{\topmargin}{-0.64truecm}
+\setlength{\headsep}{0pt}
+\setlength{\headheight}{0pt}
+\setlength{\marginparsep}{0pt}
+\setlength{\marginparwidth}{0pt}
+\setlength{\textwidth}{17.2truecm}
+\setlength{\textheight}{24.7truecm}
+\setlength\abovecaptionskip{0pt} 
+\setlength\belowcaptionskip{0pt} 
+\columnsep 0.6truecm
+
+%%見出し関連フォーマット調整
+
+\renewcommand{\figurename}{\textbf{Fig.}\hspace{0.3zw}}
+\renewcommand{\tablename}{\textbf{Table}\hspace{0.3zw}}
+\def\yenFA{Y\kern-.75em =}
+\renewcommand{\labelenumi}{(\theenumi)}
+%1行40字にする方法%まずは新しい長さを定義\newlength{\kanjiwidth}
+%「あ」の文字の幅を確保して代入\settowidth{\kanjiwidth}{あ}
+%テキストボックスの幅を「あ」の40倍（ここでは余裕を持たせて40.1にしている）に設定\setlength{\textwidth}{40.1\kanjiwidth}
+%で、次に1ページ30行にする方法。（岩熊師匠直伝）
+%\renewcommand{\baselinestretch}{1.5}
+%とでもして，行数をカウントします．マージンの中に何行入るかをみます．これが例えば３５行だったとします．次は
+%\renewcommand{\baselinestretch}{1.8}
+%としてカウントします．これが２８行だったら，この１．５と%１．８の間になるわけです．これを繰り返して，２９行になるのが例えば 1.7567 で，これを 1.7566 にすると３０行になる．そして，３１行になるのが 1.6123 で，これを1.6124にすると３０行になる．．．というくらいまで繰り返します．そうすると，
+%一番３０行に近くなるのは，幅をもたして，1.6124 と 1.7566の間にしておけばいいことになりますから，中間値をとって
+%\renewcommand{\baselinestretch}{1.6845}%ちなみに、おいらの環境では\renewcommand{\baselinestretch}{1.32}%が一番だった。
+
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\footnoterule}{%
+\kern-3\p@%
+\hrule width 1.0\columnwidth%
+\kern 2.6\p@}%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\setcounter{topnumber}{10}%    ページ上部の図表は 5 個まで
+\def\topfraction{1.00}%       ページの上 1.00 まで図表で占めて可
+\setcounter{bottomnumber}{10}% ページ下部の図表は 5 個まで
+\def\bottomfraction{1.00}%    ページの下 1.00 まで図表で占めて可
+\setcounter{totalnumber}{20}% ページあたりの図表は 10 個まで
+\def\textfraction{0.04}%      ページうち本文が占める割合の下限
+%        これを 0 にすると本文が 1 行だけのページが出来る
+%        0.04 くらいにすると 1 行だけのページは防げる
+%        0.1 くらいが良いかも知れない
+\def\floatpagefraction{0.7}%  図表だけのページは少なくとも
+                           %  これだけを図表が占める
+\makeatother
+%%%%%%%%%%%%%　ＭＳＪフォーマット定義ここまで　%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

@@ -1,0 +1,39 @@
+
+\usepackage{amsmath,amssymb}
+\usepackage{mathtools}
+%\usepackage{bm}
+%\mathtoolsset{showonlyrefs=true}
+\usepackage{here}
+\usepackage{siunitx}
+%\usepackage[dvipdfmx]{graphicx}
+%\usepackage{color}
+\usepackage[unicode,pdfusetitle,hidelinks]{hyperref}
+\usepackage{pxjahyper}
+%\bibliographystyle{junsrt} % 参考文献を引用順に並べる
+%\usepackage[backend=biber, style=numeric,sortcites=true]{biblatex}
+\bibliographystyle{ieeetr}
+\usepackage[backend=biber,style=numeric,sorting=none,bibencoding=utf8]{biblatex}
+
+\newcommand{\Hline}{\noalign{\hrule height 1.0pt}}
+\newcommand{\HHline}{\noalign{\hrule height 1.5pt}} 
+
+\newcommand*{\pictorg}{}%_org}
+
+\newcommand{\eqrefj}[1]{\eqref{#1}式}
+
+
+\usepackage{titlesec}
+\newcommand{\sectionbreak}{\clearpage}
+\newcommand{\subsectionbreak}{\clearpage}
+\newcommand{\subsubsectionbreak}{\clearpage}
+\newcommand{\SUBSC}[2]{{#1}_{\mathrm{#2}}}
+\newcommand{\diff}[1]{\frac{d #1}{dt}}
+
+\newcommand{\shatai}[1]{$\mathrm{#1}$}
+
+\newcommand*{\dmoji}[2]{${#1}_{\mathrm{#2}}$}
+\newcommand*{\smoji}[2]{{#1}_{\mathrm{#2}}}
+\newcommand{\figref}[1]{Fig.#1}
+\newcommand{\tabref}[1]{Table #1}
+\newcommand*{\tabrefT}[2]{Table #1,#2}
+\makeindex

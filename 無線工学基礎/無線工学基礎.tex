@@ -1,17 +1,14 @@
-\documentclass[a4,15pt,landscape,twocolumn]{ltjsarticle}
+\documentclass[a4,12pt,landscape]{ltjsarticle}
 \usepackage{luatexja} % ltjclasses, ltjsclasses を使うときはこの行不要
 \usepackage[ipa]{luatexja-preset}
 % Style
-\usepackage[margin=20truemm]{geometry}
+\usepackage[top=10truemm,bottom=15truemm,left=15truemm,right=15truemm]{geometry}
+\usepackage{multicol}
+\usepackage{circuitikz}
+\setlength{\columnseprule}{0.2pt}
 
 
+\input{preamble}
 \begin{document}
-\section{はじめてのLua\TeX-ja}
-ちゃんと日本語が出るかな？
-\subsection{出たかな？}
-長い文章を入力するとちゃんと右端のところで折り返されるかな？
-大丈夫そうな気がするけど．ちょっと不安だけど何事も挑戦だよね!
-\newpage
-aaaaaa
 \input{tex/part1}
 \end{document}

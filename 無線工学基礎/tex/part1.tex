@@ -1,5 +1,73 @@
-aaaaaa
-bbb
+{\large 電気回路 - 受動素子 -}
+\begin{multicols}{3}
+    {\huge 抵抗 R }
+    \begin{center}
+    \begin{circuitikz}
+        \draw (0,0) to[R] (2,0);
+    \end{circuitikz}
 
-ccc
-dffdssaaaaaaaaaaaaaaaa
+    \begin{circuitikz}
+        \draw (0,0) to[generic] (2,0);
+    \end{circuitikz}
+    \end{center}
+
+    \begin{itemize}
+        \item 炭素や長い導線、セメントなどで作る\newline 大きな抵抗値が必要な場合は磁器で作る => がいし
+        \item 電流が流れるのを防ぐ \newline => 電気抵抗
+        \item 電流を消費して熱にする \newline 1[W] = 1[J/s] \newline => 電力
+    \end{itemize}
+    \columnbreak
+
+    {\huge インダクタンス L }
+    \begin{center}
+        \begin{circuitikz}
+            \draw (0,0) to[L] (2,0);
+        \end{circuitikz}
+    \end{center}
+    \vspace{0.3cm}
+
+    \begin{itemize}
+        \item コイルともいう
+        \item 動線を巻いたコイル
+        \item 巻く芯(磁芯)によって特性が変わる
+        \item 磁力(磁束)の形でエネルギーを蓄える
+        \item 原理はファラデーの電磁誘導の法則
+        \item 直流と交流で異なる値
+        \item 直流だと電線とみなせる
+    \end{itemize}
+
+    \columnbreak
+    {\huge キャパシタンス L }
+    \begin{center}
+        \begin{circuitikz}
+            \draw (0,0) to[C] (2,0);
+        \end{circuitikz}
+    \end{center}
+    \vspace{0.1cm}
+
+    \begin{itemize}
+        \item コンデンサともいう
+        \item 2枚の導体を電気的に絶縁して挟む
+        \item 導体の間に挟まれるものが誘電体
+        \item 電荷の形でエネルギーを蓄える
+        \item 直流だと電流が流れない
+        \item 交流だと電流が流れる
+    \end{itemize}
+\end{multicols}
+\begin{table}[htbp]
+    \caption{受動素子のまとめ}
+    \label{tab:mem}
+    \begin{center}
+    \begin{tabular}{l|c|c|c} \hline
+    名前&抵抗&インダクタンス&キャパシタンス\\ \hline
+    [単位](読み方)&[Ω](オーム)&[H](ヘンリー)&[F](ファラド)\\ \hline
+    記号&R&L&C\\ \hline
+    記号の由来&抵抗率&リアクタンス&コンデンサ\\ \hline
+    値を変える方法&長さ、直径、温度&巻き数、磁芯(コア)の材質&板の面積、板の間隔、誘電体の材料\\ \hline
+    周波数を上げると&変わらない&大きくなる&小さくなる\\ \hline
+    直流の場合&抵抗&0&無限大\\ \hline
+    交流の場合&インピーダンス&リアクタンス&リアクタンス\\ \hline
+    式& R &$X_L = 2\pi fL$ & $X_C = \frac{1}{2 \pi fc}$
+    \end{tabular}
+        \end{center}
+\end{table}
