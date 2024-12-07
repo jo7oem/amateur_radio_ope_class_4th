@@ -1,0 +1,87 @@
+{\large 電気回路 - オームの法則、回路の合成 -}
+
+
+\begin{multicols}{3}
+    \begin{table}[H]
+        \caption{記号と単位}
+        \label{tab:記号}
+        \begin{center}
+            \begin{tabular}{llcl} \hline
+                記号 & 名称 & 単位&読み方 \\ \hline
+                $V$ & 電圧 & [V] &ボルト\\
+                $I$ & 電流 & [A] &アンペア\\
+                $R$ & 抵抗 & [$\Omega$] &オーム\\
+                $P$ & 電力 & [W]&ワット \\ \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+
+    \begin{itembox}[l]{オームの法則}
+        \begin{center}
+            \begin{circuitikz}
+                \draw
+                (0,0) to[short] (2,0)
+                to[R,l=$R$,v=$V_R$] (2,2)
+                (0,2)to[short,i=$I$] (2,2)
+                (0,2)to[battery1,l_=$V$] (0,0)
+            \end{circuitikz}
+        \end{center}
+        \begin{itemize}
+            \item 電流$I$が流れるとき、抵抗$R$にかかる電圧$V_R$は、$V_R = IR$
+            \item 抵抗で消費される電力$P$は\newline$P = IV_R = I^2R = V^2/R$
+        \end{itemize}
+    \end{itembox}
+
+    \begin{itembox}[l]{直列回路}
+        \begin{center}
+            \begin{circuitikz}
+                \draw
+                (0,4)to[battery1,l_=$V$] (0,0)
+                (0,4) to[short,i=$I$] (2,4)
+                to[R,l_=$R_1$,v^<=$V_{R1}$] (2,2)
+                to[R,l_=$R_2$,v^<=$V_{R2}$] (2,0)
+                to[short] (0,0)
+            \end{circuitikz}
+        \end{center}
+        \begin{itemize}
+            \item 合成抵抗$R = R_1 + R_2$
+            \item 合成電圧$V = V_{R1} + V_{R2}$ \newline(直列回路は素子ごとに電圧が違う)
+            \item 合成電流$I = I_1 = I_2$\newline(直列回路は回路全体で電流が一定)
+        \end{itemize}
+    \end{itembox}
+
+    \begin{itembox}[l]{並列回路}
+        \begin{center}
+            \begin{circuitikz}
+                \draw
+                (0,4) to[battery1,l_=$V$] (0,0)
+                (0,4) to[short,i=$I$] (3,4)
+                to[short,-*] (3,3)
+                (4,3)to[short](2,3)
+                (0,0) to[short] (3,0)
+                (2,1) to[R,l=$R_1$,i<=$I_1$,v=$V_{R1}$] (2,3)
+                (4,1) to[R,l=$R_2$,i<=$I_2$,v=$V_{R2}$] (4,3)
+                (4,1)to[short](2,1)
+                (3,0)to[short](3,1)
+            \end{circuitikz}
+        \end{center}
+        \begin{itemize}
+            \item 合成抵抗$1/R = 1/R_1 + 1/R_2$\newline
+            $R = \dfrac{R_1R_2}{R_1 + R_2}$
+            \item 合成電圧$V = V_1 = V_2$\newline(並列回路は回路全体で電圧が同じ)
+            \item 合成電流$I = I_1 + I_2$\newline(並列回路は素子ごとに電流が違う)
+        \end{itemize}
+    \end{itembox}
+
+\end{multicols}
+\begin{table}[H]
+    \caption{素子の合成}
+    \label{tab:素子の合成}
+    \begin{center}
+        \begin{tabular}{lccc} \hline
+         & R & L & C \\ \hline
+        直列 & $R=R_1+R_2$ & $L=L_1+L_2$ & $C=\dfrac{C_1C_2}{C_1+C_2}$\\
+        並列 & $R=\dfrac{R_1R_2}{R_1+R_2}$ & $L=\dfrac{L_1L_2}{L_1+L_2}$ & $C=C_1+C_2$\\
+        \end{tabular}
+    \end{center}
+\end{table}

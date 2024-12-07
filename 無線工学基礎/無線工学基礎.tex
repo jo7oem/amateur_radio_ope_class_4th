@@ -5,10 +5,21 @@
 \usepackage[top=10truemm,bottom=15truemm,left=15truemm,right=15truemm]{geometry}
 \usepackage{multicol}
 \usepackage{circuitikz}
+\usepackage{ascmac}
 \setlength{\columnseprule}{0.2pt}
 
+\makeatletter
+\newenvironment{tablehere}
+{\def\@captype{table}}
+{}
+
+\newenvironment{figurehere}
+{\def\@captype{figure}}
+{}
+\makeatother
 
 \input{preamble}
 \begin{document}
 \input{tex/part1}
+    \input{tex/オームの法則}
 \end{document}
